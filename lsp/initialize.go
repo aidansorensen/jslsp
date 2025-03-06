@@ -29,6 +29,8 @@ type InitializeResult struct {
 
 type ServerCapabilities struct{
     TextDocumentSync int `json:"textDocumentSync"`
+
+    HoverProvider bool `json:"hoverProvider"`
 }
 
 type ServerInfo struct {
@@ -46,6 +48,7 @@ func NewInitializeResponse (id int) InitializedResponse {
         Result: InitializeResult{
             Capabilities: ServerCapabilities{
             TextDocumentSync: 1,//meaning full, documents are synced by sending full contents of file...
+            HoverProvider: true,
             },
             ServerInfo: ServerInfo{
                 Name: "jslsp",

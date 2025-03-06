@@ -13,7 +13,7 @@ import (
 
 func main() {
     fmt.Println("hi")
-    logger:= getLogger("/home/aidan/jsl_lsp/log.txt")
+    logger:= getLogger("/home/aidansorensen/jslsp/log.txt")
     logger.Println("Hey, I started logging")
     scanner := bufio.NewScanner(os.Stdin)
     scanner.Split(rpc.Split)
