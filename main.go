@@ -17,7 +17,6 @@ func main() {
         fmt.Println("Error:", err)
         return
     }
-    fmt.Println("cwd=", cwd)
     logger:=getLogger(cwd + "/log.txt")
     logger.Println("Hey, I started logging")
     scanner := bufio.NewScanner(os.Stdin)
