@@ -12,8 +12,13 @@ import (
 )
 
 func main() {
-    fmt.Println("hi")
-    logger:= getLogger("/home/aidansorensen/jslsp/log.txt")
+    cwd, err := os.Getwd()
+    if err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
+    fmt.Println("cwd=", cwd)
+    logger:=getLogger(cwd + "/log.txt")
     logger.Println("Hey, I started logging")
     scanner := bufio.NewScanner(os.Stdin)
     scanner.Split(rpc.Split)

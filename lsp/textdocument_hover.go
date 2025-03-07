@@ -9,6 +9,9 @@ type HoverParams struct {
     TextDocumentPositionParams
 }
 
+type HoverResult struct {
+    value string
+}
 
 type HoverResponse struct {
     Response
