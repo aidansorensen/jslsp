@@ -1,1 +1,8 @@
-[jslsp]2025/03/07 main.go:22: Hey, I started logging
+2025/03/08 14:02:56 main.go:24: [jslsp] Hey, I started logging
+2025/03/08 14:02:56 main.go:44: [jslsp] Received message with method initialize
+2025/03/08 14:02:56 main.go:52: [jslsp] Connected to: Neovim 0.9.5
+2025/03/08 14:02:56 main.go:63: [jslsp] Sent the reply
+2025/03/08 14:02:56 main.go:44: [jslsp] Received message with method initialized
+2025/03/08 14:02:56 main.go:44: [jslsp] Received message with method textDocument/didOpen
+2025/03/08 14:02:56 main.go:71: [jslsp] Opened: file:///home/bmalt/repos/jslsp/test.jsl
+2025/03/08 14:03:04 main.go:44: [jslsp] Received message with method shutdown

@@ -3,7 +3,7 @@ package main
 import (
 	"bufio"
 	"encoding/json"
-	"fmt"
+	//"fmt"
 	"jslsp/analysis"
 	"jslsp/lsp"
 	"jslsp/rpc"
@@ -12,13 +12,17 @@ import (
 )
 
 func main() {
+    /*** commented out for now, need to figure out how to put this log in a reasonable place
     cwd, err := os.Getwd()
     if err != nil {
         fmt.Println("Error:", err)
         return
     }
-    logger:=getLogger(cwd + "/log.txt")
+    logger:=getLogger(cwd + "/jslsp_log.txt")
+    */
+    logger:=getLogger("/home/bmalt/repos/jslsp/log.txt")
     logger.Println("Hey, I started logging")
+
     scanner := bufio.NewScanner(os.Stdin)
     scanner.Split(rpc.Split)
 
@@ -86,5 +90,5 @@ func getLogger(filename string) *log.Logger {
     if err != nil {
         panic("hey you didn't give me a good file")
     }
-    return log.New(logfile, "[jslsp]", log.Ldate|log.LUTC|log.Lshortfile)
+    return log.New(logfile, "[jslsp] ", log.LstdFlags|log.Lmsgprefix|log.Lshortfile)
 }
